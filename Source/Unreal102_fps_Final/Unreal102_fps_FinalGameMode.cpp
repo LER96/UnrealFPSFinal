@@ -54,7 +54,7 @@ void AUnreal102_fps_FinalGameMode::Tick(float DeltaTime)
 
 bool AUnreal102_fps_FinalGameMode::AnyEnemySeeingPlayer()
 {
-	for (AEnemy* Enemy : EnemyActors)
+	for (AEnemyTest* Enemy : EnemyActors)
 	{
 		if (Enemy->SeeingPlayer)
 			return true;
