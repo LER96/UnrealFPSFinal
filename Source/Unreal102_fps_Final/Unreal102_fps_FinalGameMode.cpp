@@ -31,7 +31,7 @@ void AUnreal102_fps_FinalGameMode::BeginPlay()
 
 	for (AActor* Actor : FoundActors)
 	{
-		AEnemy* Enemy = Cast<AEnemy>(Actor);
+		AEnemyTest* Enemy = Cast<AEnemyTest>(Actor);
 		if (Enemy)
 		{
 			EnemyActors.Add(Enemy);
