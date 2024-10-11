@@ -61,3 +61,14 @@ bool AUnreal102_fps_FinalGameMode::AnyEnemySeeingPlayer()
 	}
 	return false;
 }
+
+void AUnreal102_fps_FinalGameMode::EndGame(bool bwin)
+{
+	GameOver = true;
+	OnGameEnd(bwin);
+}
+
+bool AUnreal102_fps_FinalGameMode::GetGameOver()
+{
+	return GameOver;
+}
