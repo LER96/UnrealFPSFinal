@@ -43,12 +43,20 @@ void AUnreal102_fps_FinalGameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (GameOver)
+		return;
+
 	if (PlayerCharacter)
 	{
 		if (AnyEnemySeeingPlayer())
+		{
 			PlayerCharacter->IncreaseDetection(DeltaTime);
+		}
 		else
 			PlayerCharacter->DecreaseDetection(DeltaTime);
+
+		if (PlayerCharacter->Detected)
+			EndGame(false);
 	}
 }
 

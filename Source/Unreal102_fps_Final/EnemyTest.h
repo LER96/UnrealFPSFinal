@@ -12,9 +12,12 @@ class UNREAL102_FPS_FINAL_API AEnemyTest : public ACharacter
 	GENERATED_BODY()
 
 public:
-	bool SeeingPlayer;
+	
 	// Sets default values for this character's properties
 	AEnemyTest();
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "AI")
+	bool SeeingPlayer;
 
 protected:
 	// Called when the game starts or when spawned

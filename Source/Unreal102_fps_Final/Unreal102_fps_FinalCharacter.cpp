@@ -49,10 +49,16 @@ void AUnreal102_fps_FinalCharacter::IncreaseDetection(float DeltaTime)
 	DetectionAmount = FMath::Clamp(DetectionAmount, 0.0f, MaxDetection);
 
 	OnDetectionChange(GetDetectionPercent());
+
+	if (DetectionAmount == MaxDetection)
+		Detected = true;
 }
 
 void AUnreal102_fps_FinalCharacter::DecreaseDetection(float DeltaTime)
 {
+	if (Detected)
+		return;
+
 	const float DecreaseRate = MaxDetection / TimeToBeDetected;
 	DetectionAmount -= DecreaseRate * DeltaTime;
 	DetectionAmount = FMath::Clamp(DetectionAmount, 0.0f, MaxDetection);

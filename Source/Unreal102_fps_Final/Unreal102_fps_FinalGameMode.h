@@ -29,6 +29,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "GameMode")
 	void OnGameEnd(bool bwin);
 
+	UFUNCTION(BlueprintCallable, Category = "GameMode")
+	void EndGame(bool bwin);
+
+	UFUNCTION(BlueprintCallable, Category = "GameMode")
+	bool GetGameOver();
+
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "GameMode")
 	bool GameOver;
