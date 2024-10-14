@@ -25,7 +25,7 @@ void AUnreal102_fps_FinalGameMode::BeginPlay()
 
 	//find all enemies
 	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemy::StaticClass(), FoundActors);
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemyTest::StaticClass(), FoundActors);
 
 	EnemyActors.Empty();
 
